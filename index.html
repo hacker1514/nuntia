@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nuntia — Offline Emergency Cellular Messenger powered by Flutter, Dart, and Kotlin. Send and receive text messages cleanly without internet dependency.">
+  <meta name="keywords" content="Nuntia, Messenger, Cellular SMS, Offline Messaging, Emergency Texting, Flutter, Dart, Kotlin, Niranjan Kumar K">
+  <meta name="author" content="Niranjan Kumar K">
+  <meta name="theme-color" content="#10b981">
+  <meta property="og:title" content="Nuntia — Offline Emergency Cellular Messenger">
+  <meta property="og:description" content="Send and receive text messages cleanly using carrier cellular SMS. Local-first, private, and fast.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hacker1514.github.io/nuntia/">
+  <meta property="og:image" content="assets/images/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Nuntia — Offline Emergency Cellular Messenger</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__content">
+      <img src="assets/images/logo.png" alt="Nuntia logo" class="loader__logo" width="64" height="64">
+      <div class="loader__spinner"></div>
+      <p class="loader__text">Loading Nuntia</p>
+    </div>
+  </div>
+
+  <!-- Particles Background -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/images/logo.png" alt="Nuntia logo" width="32" height="32">
+        <span class="gradient-text">Nuntia</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="features.html" class="nav__link">Features</a></li>
+        <li><a href="docs.html" class="nav__link">Docs</a></li>
+        <li><a href="faq.html" class="nav__link">FAQ</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li class="nav__cta">
+          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--sm ripple" download>Download APK</a>
+        </li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container hero__content">
+        <div class="hero__badge reveal"><span class="dot"></span> Open Source · Local-First Cellular · By Niranjan Kumar K</div>
+        <img src="assets/images/logo.png" alt="Nuntia logo" class="hero__logo reveal" width="84" height="84">
+        <h1 class="hero__title reveal"><span class="gradient-text">Nuntia</span></h1>
+        <p class="hero__tagline reveal">Offline Emergency Cellular Messenger.</p>
+        <p class="hero__desc reveal">
+          Send and receive text messages cleanly using your Android phone's cellular network SMS capability.
+          Built with Flutter, Dart, and Kotlin — styled in a modern WhatsApp aesthetic with 100% offline privacy.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--lg ripple" download>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Nuntia APK
+          </a>
+          <a href="https://github.com/hacker1514/nuntia" class="btn btn--secondary btn--lg ripple" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub Repository
+          </a>
+          <a href="docs.html" class="btn btn--ghost btn--lg ripple">Documentation</a>
+        </div>
+
+        <!-- Animated Terminal -->
+        <div class="terminal glass reveal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--r"></span>
+            <span class="terminal__dot terminal__dot--y"></span>
+            <span class="terminal__dot terminal__dot--g"></span>
+            <span class="terminal__title">nuntia — cellular-sms-engine</span>
+          </div>
+          <div class="terminal__body" id="terminalOutput">
+            <!-- JS types lines here -->
+          </div>
+        </div>
+
+        <div class="hero__stats reveal">
+          <div class="hero__stat"><span>100%</span> Offline Transport</div>
+          <div class="hero__stat"><span>&lt;1ms</span> SQLite Speed</div>
+          <div class="hero__stat"><span>Zero</span> Cloud Tracking</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section section--alt" id="stats">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Performance</span>
+          <h2 class="section__title">Built for Reliability</h2>
+          <p class="section__subtitle">Nuntia communicates directly via carrier cell towers without internet dependency.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="100" data-suffix="%">0</span>
+            <span class="stat-card__label">Cellular Transport</span>
+          </div>
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="0" data-suffix=" Cloud">0</span>
+            <span class="stat-card__label">Zero External Servers</span>
+          </div>
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="1" data-suffix="-Tap">0</span>
+            <span class="stat-card__label">Grant Onboarding</span>
+          </div>
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="100" data-suffix="%">0</span>
+            <span class="stat-card__label">Local Privacy</span>
+          </div>
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="60" data-suffix=" FPS">0</span>
+            <span class="stat-card__label">Smooth UI Animation</span>
+          </div>
+          <div class="stat-card glass reveal">
+            <span class="stat-card__number" data-target="24" data-suffix="/7">0</span>
+            <span class="stat-card__label">Emergency Readiness</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Core Features</span>
+          <h2 class="section__title">WhatsApp Aesthetic, Cellular Power</h2>
+          <p class="section__subtitle">Everything you need for clean, private text messaging.</p>
+        </div>
+        <div class="features__grid">
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>WhatsApp Theme</h3>
+            <p>Emerald Teal and Dark Mode aesthetics with wallpaper backgrounds and checkmark indicators.</p>
+          </article>
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M2 12h10"/><path d="M12 2v10"/></svg>
+            </div>
+            <h3>100% Local-First</h3>
+            <p>Messages are stored exclusively in indexed SQLite tables on your device. Zero cloud sync.</p>
+          </article>
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            </div>
+            <h3>Contact Management</h3>
+            <p>Create, edit, and manage contact names & numbers with floating action controls.</p>
+          </article>
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Multi-part SMS</h3>
+            <p>Native Kotlin SmsManager bridge handles long messages smoothly with delivery notifications.</p>
+          </article>
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Single-Tap Onboarding</h3>
+            <p>Clean single "Grant" button onboard setup for standard Android SMS default role configuration.</p>
+          </article>
+          <article class="feature-card glass reveal">
+            <div class="feature-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+            </div>
+            <h3>Zero Glitch Transitions</h3>
+            <p>Optimized Flutter state repositories prevent dashboard flashes when opening or closing chats.</p>
+          </article>
+        </div>
+        <div class="cta-center" style="text-align:center;margin-top:2rem;">
+          <a href="features.html" class="btn btn--secondary ripple">Explore All Features</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creator Section -->
+    <section class="section section--alt" id="testimonials">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Open Source Creator</span>
+          <h2 class="section__title">Designed by Niranjan Kumar K</h2>
+          <p class="section__subtitle">Built as a privacy-first, offline-capable cellular messaging platform.</p>
+        </div>
+        <div class="testimonials__grid">
+          <article class="testimonial-card glass reveal">
+            <p class="testimonial-card__quote">"Nuntia provides an emergency messaging alternative that relies purely on phone carrier signals. No servers, no tracking, zero internet reliance."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">N</div>
+              <div>
+                <div class="testimonial-card__name">Niranjan Kumar K</div>
+                <div class="testimonial-card__role">Lead Engineer &amp; Creator</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card glass reveal">
+            <p class="testimonial-card__quote">"Combining the high-class aesthetic of WhatsApp with native Kotlin SMS handlers gives Android users total control over their text communications."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">N</div>
+              <div>
+                <div class="testimonial-card__name">Local-First Philosophy</div>
+                <div class="testimonial-card__role">KNI-ORG Open Source</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta-banner glass reveal">
+          <h2>Ready to try <span class="gradient-text">Nuntia</span>?</h2>
+          <p>Download the Nuntia APK for Android and experience offline cellular messaging today.</p>
+          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--lg ripple" download>Download Nuntia APK</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__brand">
+            <img src="assets/images/logo.png" alt="Nuntia logo" width="32" height="32">
+            <div>
+              <strong>Nuntia</strong>
+              <p>By Niranjan Kumar K · KNI-ORG</p>
+            </div>
+          </div>
+          <p class="footer__desc">Offline Emergency Cellular Messenger. Send and receive text messages cleanly without internet dependency.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Product</h4>
+          <div class="footer__links">
+            <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" download>Download APK</a>
+            <a href="install.html">Installation</a>
+            <a href="features.html">Features</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <div class="footer__links">
+            <a href="docs.html">Documentation</a>
+            <a href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Niranjan Kumar K. All rights reserved. Nuntia is local-first &amp; open source.</p>
+        <div class="footer__socials">
+          <a href="https://github.com/hacker1514/nuntia" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:hackerenvironment1514@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="docs.html" aria-label="Documentation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
