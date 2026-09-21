@@ -48,7 +48,7 @@ Developed by **Niranjan Kumar K**.
 
 The publishing landing page and APK file are available in the repository's `web_page/` directory:
 
-- **Web Landing Page**: [`https://hacker1514.github.io/nuntial`](view)
+- **Web Landing Page**: [`https://hacker1514.github.io/nuntia`](view)
 - **Android APK**: [`APK Direct Link`](https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk)
 - **GitHub Repository**: [REPO](https://github.com/hacker1514/nuntia)
 
