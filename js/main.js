@@ -228,6 +228,90 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(typeLine, 800);
   }
+
+  // Download Modal & Play Protect Instructions Handler
+  function initDownloadModal() {
+    if (!document.getElementById('downloadModal')) {
+      const modalHTML = `
+        <div class="modal-backdrop" id="downloadModal" aria-hidden="true">
+          <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modalTitle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Started!
+              </h3>
+              <button class="modal-close" id="closeModalBtn" aria-label="Close modal">&times;</button>
+            </div>
+            
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 12px; text-align: left;">
+              Your <code>nuntia.apk</code> file is downloading. Because Nuntia requests SMS permissions, follow these steps if Android or Play Protect displays a warning:
+            </p>
+
+            <div class="protect-step-list">
+              <div class="protect-step-item">
+                <div class="protect-step-num">1</div>
+                <div class="protect-step-content">
+                  <h4>Temporarily Turn Off Play Protect</h4>
+                  <p>Open <strong>Google Play Store</strong> &rarr; Tap <strong>Profile Picture</strong> (top right) &rarr; Select <strong>Play Protect</strong> &rarr; Tap <strong>Settings Gear</strong> &rarr; Turn OFF <strong>"Scan apps with Play Protect"</strong>.</p>
+                </div>
+              </div>
+
+              <div class="protect-step-item">
+                <div class="protect-step-num">2</div>
+                <div class="protect-step-content">
+                  <h4>Install Nuntia APK</h4>
+                  <p>Open your phone's <strong>Downloads / File Manager</strong>, tap <code>nuntia.apk</code>, and tap <strong>Install</strong> (or tap <em>More Details &rarr; Install anyway</em>).</p>
+                </div>
+              </div>
+
+              <div class="protect-step-item">
+                <div class="protect-step-num">3</div>
+                <div class="protect-step-content">
+                  <h4>Turn Play Protect Back ON (Recommended)</h4>
+                  <p>After installation finishes, re-open Play Store &rarr; Play Protect &rarr; Settings &rarr; Turn <strong>"Scan apps with Play Protect"</strong> back <strong>ON</strong> for ongoing security.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommend-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+              <p><strong>Security Tip:</strong> Turning Play Protect back ON after installing Nuntia keeps your phone fully safe while allowing Nuntia to run smoothly!</p>
+            </div>
+
+            <button class="btn btn--primary btn--sm ripple" id="dismissModalBtn" style="width: 100%; margin-top: 16px; justify-content: center;">Got It! Continue to Install</button>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+      const modal = document.getElementById('downloadModal');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const dismissBtn = document.getElementById('dismissModalBtn');
+
+      const closeModal = () => modal.classList.remove('active');
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    const downloadBtns = document.querySelectorAll('a[download]');
+    downloadBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast('Download starting...');
+        const modal = document.getElementById('downloadModal');
+        if (modal) {
+          setTimeout(() => {
+            modal.classList.add('active');
+          }, 350);
+        }
+      });
+    });
+  }
+
+  initDownloadModal();
 });
 
 // Toast Utility

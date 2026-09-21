@@ -38,7 +38,7 @@
         <li><a href="about.html" class="nav__link">About</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
         <li class="nav__cta">
-          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--sm ripple" download>Download APK</a>
+          <a href="nuntia.apk" class="btn btn--primary btn--sm ripple" download>Download APK</a>
         </li>
         <li>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
@@ -65,15 +65,37 @@
 
     <section class="section">
       <div class="container">
-        <div class="docs-content glass" style="max-width: 800px; margin: 0 auto;">
+        <div class="docs-content glass" style="max-width: 800px; margin: 0 auto; padding: 32px;">
           <h2>1. Download the APK File</h2>
           <p>Download <code>nuntia.apk</code> directly to your Android device from our website or GitHub repository.</p>
           
-          <h2>2. Enable Unknown Sources Installation</h2>
-          <p>On Android 8.0+, tap on the downloaded APK and grant permission to "Install Unknown Apps" when prompted by your browser or file manager.</p>
+          <h2>2. Temporarily Disable Play Protect (If Prompted)</h2>
+          <p>Because Nuntia requests SMS permissions for offline cellular messaging, Google Play Protect may block sideloading:</p>
+          <div class="protect-step-list" style="margin: 14px 0;">
+            <div class="protect-step-item">
+              <div class="protect-step-num">A</div>
+              <div class="protect-step-content">
+                <h4>Open Play Store Settings</h4>
+                <p>Open <strong>Google Play Store</strong> &rarr; Tap <strong>Profile Picture</strong> (top right) &rarr; Select <strong>Play Protect</strong> &rarr; Tap <strong>Settings Gear</strong>.</p>
+              </div>
+            </div>
+            <div class="protect-step-item">
+              <div class="protect-step-num">B</div>
+              <div class="protect-step-content">
+                <h4>Turn OFF Scanning</h4>
+                <p>Turn OFF <strong>"Scan apps with Play Protect"</strong> temporarily.</p>
+              </div>
+            </div>
+          </div>
 
-          <h2>3. Launch &amp; Single-Tap Grant</h2>
-          <p>Open Nuntia. Tap the single <strong>"Grant"</strong> action button to allow SMS permissions and set Nuntia as your device's default text messaging application.</p>
+          <h2>3. Install Nuntia APK &amp; Grant Permissions</h2>
+          <p>Open your phone's <strong>Downloads</strong> or <strong>File Manager</strong>, tap <code>nuntia.apk</code>, and select <strong>Install</strong>. Once launched, tap <strong>"Grant"</strong> to allow SMS access and set Nuntia as your default SMS handler.</p>
+
+          <h2>4. Re-enable Play Protect (Recommended Best Practice)</h2>
+          <div class="recommend-box" style="margin-top: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+            <p><strong>Security Recommendation:</strong> After installation completes, re-open Play Store &rarr; Play Protect &rarr; Settings &rarr; Turn <strong>"Scan apps with Play Protect"</strong> back <strong>ON</strong>. Nuntia will remain installed while your device stays protected!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -84,7 +106,7 @@
         <div class="cta-banner glass reveal">
           <h2>Ready to try <span class="gradient-text">Nuntia</span>?</h2>
           <p>Download the Nuntia APK for Android and experience offline cellular messaging today.</p>
-          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--lg ripple" download>Download Nuntia APK</a>
+          <a href="nuntia.apk" class="btn btn--primary btn--lg ripple" download>Download Nuntia APK</a>
         </div>
       </div>
     </section>
@@ -106,7 +128,7 @@
         <div>
           <h4 class="footer__heading">Product</h4>
           <div class="footer__links">
-            <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" download>Download APK</a>
+            <a href="nuntia.apk" download>Download APK</a>
             <a href="install.html">Installation</a>
             <a href="features.html">Features</a>
           </div>

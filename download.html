@@ -38,7 +38,7 @@
         <li><a href="about.html" class="nav__link">About</a></li>
         <li><a href="contact.html" class="nav__link">Contact</a></li>
         <li class="nav__cta">
-          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--sm ripple" download>Download APK</a>
+          <a href="nuntia.apk" class="btn btn--primary btn--sm ripple" download>Download APK</a>
         </li>
         <li>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
@@ -69,10 +69,53 @@
           <img src="assets/images/logo.png" alt="Nuntia" style="width: 80px; height: 80px; border-radius: 20px; margin-bottom: 16px;">
           <h2 style="font-size: 1.6rem; margin-bottom: 10px;">Nuntia Android APK</h2>
           <p style="color: var(--text-dim); margin-bottom: 24px;">Compatible with Android 5.0 (API 21) and above. Local-first cellular transport.</p>
-          <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" class="btn btn--primary btn--lg ripple" download>
+          <a href="nuntia.apk" class="btn btn--primary btn--lg ripple" download>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Direct APK (nuntia.apk)
           </a>
+        </div>
+
+        <!-- Play Protect & Installation Guide Card -->
+        <div class="glass reveal" style="max-width: 680px; margin: 32px auto 0; text-align: left; padding: 28px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; border-bottom: 1px solid var(--panel-border); padding-bottom: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin: 0; color: var(--text);">How to Install & Bypass Play Protect</h3>
+          </div>
+
+          <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 16px;">
+            Because Nuntia requires cellular SMS permissions, Google Play Protect may display a warning prompt when installing outside the Play Store. Follow these simple steps:
+          </p>
+
+          <div class="protect-step-list">
+            <div class="protect-step-item">
+              <div class="protect-step-num">1</div>
+              <div class="protect-step-content">
+                <h4>Temporarily Turn Off Play Protect</h4>
+                <p>Open <strong>Google Play Store</strong> &rarr; Tap <strong>Profile Picture</strong> (top right) &rarr; Select <strong>Play Protect</strong> &rarr; Tap <strong>Settings Gear</strong> &rarr; Turn OFF <strong>"Scan apps with Play Protect"</strong>.</p>
+              </div>
+            </div>
+
+            <div class="protect-step-item">
+              <div class="protect-step-num">2</div>
+              <div class="protect-step-content">
+                <h4>Install Nuntia APK</h4>
+                <p>Open your phone's <strong>Downloads / File Manager</strong>, tap <code>nuntia.apk</code>, and tap <strong>Install</strong> (or tap <em>More Details &rarr; Install anyway</em>).</p>
+              </div>
+            </div>
+
+            <div class="protect-step-item">
+              <div class="protect-step-num">3</div>
+              <div class="protect-step-content">
+                <h4>Turn Play Protect Back ON (Recommended)</h4>
+                <p>After Nuntia finishes installing, re-open Play Store &rarr; Play Protect &rarr; Settings &rarr; Turn <strong>"Scan apps with Play Protect"</strong> back <strong>ON</strong> for your device's ongoing security.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="recommend-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+            <p><strong>Recommendation:</strong> Re-enabling Play Protect after installing Nuntia keeps your smartphone 100% secure while allowing Nuntia to work uninterrupted!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -94,7 +137,7 @@
         <div>
           <h4 class="footer__heading">Product</h4>
           <div class="footer__links">
-            <a href="https://github.com/hacker1514/nuntia/releases/download/v1.0.0/nuntia.apk" download>Download APK</a>
+            <a href="nuntia.apk" download>Download APK</a>
             <a href="install.html">Installation</a>
             <a href="features.html">Features</a>
           </div>
